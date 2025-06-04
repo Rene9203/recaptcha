@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>reCAPTCHA v3</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcNy1UrAAAAAAqN881QdaY2mZd_tzGMGtuuy8Lw"></script>
+    <script>
+      function executeCaptcha() {
+        grecaptcha.ready(function () {
+          grecaptcha.execute('6LcNy1UrAAAAAAqN881QdaY2mZd_tzGMGtuuy8Lw', { action: 'search' }).then(function (token) {
+            window.flutter_inappwebview.callHandler('captchaResult', token);
+          });
+        });
+      }
+      window.onload = executeCaptcha;
+    </script>
+  </head>
+  <body>
+  <div><p>Verifying...</p></div>
+  </body>
+</html>
