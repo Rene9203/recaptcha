@@ -7,7 +7,7 @@
       function executeCaptcha() {
         grecaptcha.ready(function () {
           grecaptcha.execute('6LcNy1UrAAAAAAqN881QdaY2mZd_tzGMGtuuy8Lw', { action: 'search' }).then(function (token) {
-            if (window.flutter_inappwebview) {
+            if (!!window.flutter_inappwebview) {
 			window.flutter_inappwebview.callHandler('captchaResult', token);
 		  }
           });
